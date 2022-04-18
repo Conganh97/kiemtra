@@ -5,37 +5,35 @@
     <title>Title</title>
 </head>
 <body>
-<input id="canha" type="number" value="">
-<input id="canhb" type="number" value="">
-<input id="canhc" type="number" value="">
+<input id="no1" type="number" value="">
+<input id="no2" type="number" value="">
+<input id="no3" type="number" value="">
 <button onclick="tinh()">Kiểm tra</button>
-<p id = "tamgiac"></p>
+<p id="tamgiac"></p>
 
 
 <script>
-    let a = Number(document.getElementById('canha').value),
-        b = Number(document.getElementById('canhb').value),
-        c = Number(document.getElementById('canhc').value);
-    let inra=""
+    let inra = ""
     function tinh() {
-        if (a > 0 && b > 0 && c > 0) {
-            if (a + b > c || b + c > a || c + a > b) {
-                if (a==b==c) {
-                    inra = "là tam giác cân"
-                 else if ( a*a+b*b==c*c
-                        || b*b+c*c==a*a
-                        || a*a+c*c==b*b) inra = "là tam giác vuông"
-                        else if (a == b || b == c || c == a) inra = "là tam giác đều"
-                else inra = "Không là tam giác"
-                }
+        a = Number(document.getElementById('no1').value),
+            b = Number(document.getElementById('no2').value),
+            c = Number(document.getElementById('no3').value);
+        if (a>0 && b>0 && c>0) {
+            if (a+b>c && b+c>a && c+a>b) {
+                inra = "Đây là tam giác thường"
             }
-        document.getElementById('tamgiac').innerHTML = inra;
+            if (a==b && b==c && a==c) {
+                inra = "Đây là tam giác đều"
+            } else if (a==b || b==c || c==a) {
+                inra = "Đây là tam giác cân"
+            } else if (a*a+b*b==c*c || b*b+c*c==a*a || c*c+a*a==b*b) {
+                inra = "Đây là tam giác vuông"
+            } else {
+                inra = "Đây không phải là tam giác"
+            }
+        }   else inra = "Đây không phải là tam giác"
+        document.getElementById('tamgiac').innerHTML = inra
     }
-
-
-
-
-
 </script>
 </body>
 </html>

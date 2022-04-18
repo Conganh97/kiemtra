@@ -14,12 +14,15 @@
 </body>
 </html>
 <script>
-    function tinh(){
-        let a = document.getElementById('sonam').value
-        let a1=parseInt(a)
-        let theki = a1/100 + 1
-        let theki1=parseInt(theki)
-        document.getElementById('Theki').innerHTML = theki1
-            }
+    let a =0;
+    let theki = 0;
+    function tinh() {
+        a = +document.getElementById('sonam').value
+    if (a<100) theki=1
+        if (a%100==0) theki=a/100
+            else theki=a/100 + 1
+        theki1=parseInt(theki)
+        document.getElementById('Theki').innerHTML = "thế kỉ " + theki1
+    }
 
 </script>

@@ -14,13 +14,11 @@
 </body>
 </html>
 <script>
+    let a=0, b=0, tong=0;
     function tinh(){
-        let a = document.getElementById('soa').value
-        let a1=parseInt(a)
-        let b = document.getElementById('sob').value
-        let b1 = parseInt(b)
-        let tong = 0
-        for (let i = a1; i <= b1; i++) {
+        a = +document.getElementById('soa').value
+        b = +document.getElementById('sob').value
+                for (let i = a; i <= b; i++) {
             tong = tong + i
         }
         document.getElementById('tong').innerHTML = tong
