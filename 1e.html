@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="canha" type="number" value="">
+<input id="canhb" type="number" value="">
+<input id="canhc" type="number" value="">
+<button onclick="tinh()">Kiểm tra</button>
+<p id = "tamgiac"></p>
+
+
+<script>
+    let a = document.getElementById('canha').value,
+        b = document.getElementById('canhb').value,
+        c = document.getElementById('canhc').value;
+    function tinh() {
+        if (a > 0 && b > 0 && c > 0) {
+            if (a+b>c || b+c>a || c+a>b) {
+                if (a==b || b==c || c==a)
+                    document.getElementById('tamgiac').innerHTML = "là tam giác cân"
+                if ( a*a+b*b==c*c
+                    || b*b+c*c==a*a
+                    || a*a+c*c==b*b) document.getElementById('tamgiac').innerHTML = "là tam giác vuông"
+                if (a==b==c) document.getElementById('tamgiac').innerHTML = "là tam giác đều"
+            }
+        }else document.getElementById('tamgiac').innerHTML = "Không là tam giác"
+    }
+
+
+
+
+</script>
+</body>
+</html>

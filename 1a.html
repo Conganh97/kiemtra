@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Câu 1a </h1>
+<input id="dodai" type="number" value="">
+<button onclick="tinh()">Tính</button>
+<p id="Dientichvuong"></p>
+<p id="Chuvihinhvuong"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let a = document.getElementById('dodai').value
+        document.getElementById('Dientichvuong').innerHTML =a**2
+        document.getElementById('Chuvihinhvuong').innerHTML =a*4
+    }
+
+</script>
