@@ -13,21 +13,25 @@
 
 
 <script>
-    let a = document.getElementById('canha').value,
-        b = document.getElementById('canhb').value,
-        c = document.getElementById('canhc').value;
+    let a = Number(document.getElementById('canha').value),
+        b = Number(document.getElementById('canhb').value),
+        c = Number(document.getElementById('canhc').value);
+    let inra=""
     function tinh() {
         if (a > 0 && b > 0 && c > 0) {
-            if (a+b>c || b+c>a || c+a>b) {
-                if (a==b || b==c || c==a)
-                    document.getElementById('tamgiac').innerHTML = "là tam giác cân"
-                if ( a*a+b*b==c*c
-                    || b*b+c*c==a*a
-                    || a*a+c*c==b*b) document.getElementById('tamgiac').innerHTML = "là tam giác vuông"
-                if (a==b==c) document.getElementById('tamgiac').innerHTML = "là tam giác đều"
+            if (a + b > c || b + c > a || c + a > b) {
+                if (a==b==c) {
+                    inra = "là tam giác cân"
+                 else if ( a*a+b*b==c*c
+                        || b*b+c*c==a*a
+                        || a*a+c*c==b*b) inra = "là tam giác vuông"
+                        else if (a == b || b == c || c == a) inra = "là tam giác đều"
+                else inra = "Không là tam giác"
+                }
             }
-        }else document.getElementById('tamgiac').innerHTML = "Không là tam giác"
+        document.getElementById('tamgiac').innerHTML = inra;
     }
+
 
 
 
